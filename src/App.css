@@ -1,38 +1,155 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Lexend+Deca:wght@100;200;300;400;500;600;700&family=Montserrat:wght@400;700&family=Mulish:wght@300&family=Poppins:wght@300;400;600&family=Urbanist:wght@300;400;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: "Urbanist", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --bs-dark-color: #1a1d20;
+  --bs-dark-primary: #1c1c1c;
+  --bs-main-color: #fff;
+  --bs-primary-color: #c6c6c6;
+  --secondary-color: #29a9fd;
+  --bs-supporting-color: #c850c0;
+  --bs-intro-color: #000080;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Lexend Deca", sans-serif;
+  color: var(--bs-dark-color);
+}
+
+h1 {
+  font-size: 3.8rem;
+}
+
+h2 {
+  line-height: 3rem;
+  font-weight: 600;
+  font-size: 3.4rem;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+p {
+  margin: 0;
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--bs-dark-color);
+  letter-spacing: 0.07rem;
+  line-height: 1.55rem;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+.common-heading {
+  font-size: 2.8rem;
+  letter-spacing: 0.01rem !important;
+  font-weight: 500;
+}
+
+.common-title {
+  margin-bottom: 4.2rem;
+}
+
+.bg-color {
+  background-color: var(--bs-dark-primary);
+}
+
+.dark {
+  background-color: #343a40;
+}
+
+.dark-hover {
+  background-color: #495057;
+}
+
+.nav-link {
+  color: var(--bs-main-color) !important;
+}
+
+.nav-link :hover {
+  color: var(--secondary-color);
+}
+
+/* shape css */
+.custom-shape-divider-top-1720983779 {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+@media screen and (max-width: 620px) {
+  .custom-shape-divider-top-1720983779 {
+    display: none;
+  }
+  .intro {
+    flex-direction: column;
+  }
+  .intro p {
+    padding-right: 15px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .custom-shape-divider-top-1720983779 {
+    position: absolute;
+    top: 86px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.custom-shape-divider-top-1720983779 svg {
+  position: relative;
+  display: block;
+  width: calc(134% + 1.3px);
+  height: 178px;
+  transform: rotateY(180deg);
+}
+
+.custom-shape-divider-top-1720983779 .shape-fill {
+  fill: #1c1c1c;
+}
+
+/* for special background */
+
+/* more info section */
+.sponsor {
+  background-image: linear-gradient(
+      rgba(22, 22, 22, 0.9),
+      rgba(22, 22, 22, 0.9)
+    ),
+    url("https://images.pexels.com/photos/316093/pexels-photo-316093.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 3rem 0;
+  overflow: hidden;
+}
+
+/* loader css */
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  align-items: center;
+  z-index: 9999; /* Ensure it is above other content */
 }
